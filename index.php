@@ -1,16 +1,13 @@
 <?php
 ini_set('display_errors', 1);
 error_reporting( E_ALL );
-function redirection(){
-	header('location:index.php');
-}
+
 
 
 
 	require('controller/frontend.php');
 	require('controller/backend.php');
 	
-	// regarder construction routeur
 	
 try{
 	if (isset($_GET['action']))
@@ -146,7 +143,7 @@ try{
 			case 'updatePostValidAdmin':
 				if(!empty($_POST['idPost']) && !empty($_POST['title']) && !empty($_POST['resume']) && !empty($_POST['content']))
 				{
-						updatePost($_POST['idPost'], $_POST['title'], $_POST['resume'], $_POST['content'], $_POST['checkPost']);	
+						updatePost($_POST['idPost'], $_POST['title'], $_POST['resume'], $_POST['content']);	
 				}
 				else{
 					throw new Exception('Un paramètre est manquant');
@@ -158,7 +155,7 @@ try{
 				
 			case 'addBilletAdmin':
 			if(!empty($_POST['title']) && !empty($_POST['resume']) && !empty($_POST['content'])){
-				addBillet($_POST['title'], $_POST['resume'], $_POST['content'], $_POST['checkPost']);
+				addBillet($_POST['title'], $_POST['resume'], $_POST['content']);
 			}
 			else{
 				throw new Exception ('Un paramètre est manquant');
@@ -172,7 +169,6 @@ try{
 			case 'authenticize':
 				if (!empty($_POST['identifiant']) && !empty($_POST['password'])){
 					authenticize($_POST['identifiant'], $_POST['password']);
-
 				}
 				else{
 					throw new Exception ('Login ou mot de passe incorrect');
@@ -185,9 +181,8 @@ try{
 				break;
 			
 			
-			case 'logoff':
-				session_destroy();
-				require('view/login.php');
+			case 'logoff':	
+				logoff();
 				break;	
 
 				
@@ -209,5 +204,5 @@ try{
 
 catch(Exception $e){
 	  $errorMessage = $e->getMessage();
-	  require("erreur.php");
+	  require("view/erreur.php");
 }

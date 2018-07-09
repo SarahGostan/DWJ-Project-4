@@ -1,12 +1,7 @@
 <?php 
 
- $title= "Administration"; ?>
-	
-<?php ob_start();
-
-include('liens.php');
-
-
+ $title= "Administration";
+ ob_start();
 ?>
 
 
@@ -17,10 +12,9 @@ include('liens.php');
 	
 		<form id="newPost" action = "index.php?action=addBilletAdmin" method="post">	
 			<label for="title" class="title">Titre</label>
-			
 			<input type="text" name="title" id="title"/><br />
 			<label for="resume">Résumé</label>
-			<textarea type="texte" name="resume" id="resume" /></textarea><br />
+			<textarea type="texte" name="resume" id="resume" style="height:200px";/></textarea><br />
 			<label for="content">Contenu</label>
 			<textarea type="texte" name="content" id="content" /></textarea><br />
 			<input type="submit" value = "Envoyer"/>

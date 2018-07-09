@@ -1,5 +1,3 @@
-
-
 <?php 
 
  $title= "Modération"; ?>
@@ -22,10 +20,10 @@
 	?>	<div class="commentaire"><p>
 			<div class="descriptifCommentaire">
 				<a href="index.php?action=post&id=<?= $data['post_id']?>#comm<?= $data['id'] ?>">Commentaire <?= $data['id']; ?>, billet <?= $data['post_id']?></a><br />		
-				Le <?=	$data['comment_date']; ?> <br />
-				Par <?=	$data['pseudo']; ?><br />
-				Nombre de report : <?= $data['nombre_report']; ?> <br />
-				Dernier report le : <br /><?= $data['report_date']; ?></p>
+				Le <?=	$data['date']; ?> <br />
+				Par <?=	$data['author']; ?><br />
+				Nombre de report : <?= $data['number_report']; ?> <br />
+				Dernier report le : <br /><?= $data['last_report_date']; ?></p>
 			</div>
 			<div class="contenuCommentaire">
 		<p><?=	$data['content']; ?></p>

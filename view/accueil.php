@@ -1,12 +1,10 @@
-<?php $title= "Accueil"; ?>
-
-<?php ob_start(); ?>
+<?php $title= "Accueil";
+ ob_start(); ?>
 
 	<p>Bonjour ! Voici la liste des derniers billets</p>
 
+
 	<?php
-	include("liens.php");
-	
 
 			
 	while ($data = $posts->fetch())
@@ -53,6 +51,3 @@
 			</p>
 	<?php $content = ob_get_clean(); ?>
 	<?php require('template.php'); ?>
-	
-	</body>
-</html>

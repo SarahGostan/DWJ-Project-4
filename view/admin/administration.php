@@ -1,13 +1,7 @@
 <?php 
 
- $title= "Administration"; ?>
-	
-<?php ob_start();
-
-include('liens.php');
-
-
-?>
+$title= "Administration";
+ob_start();?>
 
 	<div id="presAdmin">
 	<p> Bienvenue sur le portail d'administration </p>
@@ -23,7 +17,7 @@ include('liens.php');
 
 	
 		<div class="abstract">	<h2>
-						<?= ($data['titre']); ?><br />
+						<?= ($data['title']); ?><br />
 						<em>le <?= $data['date_creation'];
 									?></em>
 					</h2>

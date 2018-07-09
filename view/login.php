@@ -1,6 +1,5 @@
-<?php $title= "Lecture"; ?>
-	
-<?php ob_start(); ?>
+<?php $title= "Lecture";
+ ob_start(); ?>
 
 
 	<form id="formLogin" action = "index.php?action=authenticize" method="post" >

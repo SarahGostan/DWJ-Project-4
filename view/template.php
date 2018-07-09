@@ -2,14 +2,15 @@
 <html>
     <head>
         <meta charset="utf-8" />
-		 <script type="text/javascript" src="public/tiny_mce/tiny_mce.js"></script>
+	 	 <script type="text/javascript" src="public/tinyMCE/tiny_mce/tiny_mce.js"></script>
     <script type="text/javascript">
-        tinyMCE.init({
+	 tinyMCE.init({
             mode : "exact",
 			theme : "advanced",
-		    elements : "content, resume",
+		    elements : "content",
 			theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,formatselect,fontsizeselect,|,cut,copy,|,search,replace,bullist,numlist",
             theme_advanced_buttons2 : "outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor,|,sub,sup,|,charmap,emotions,|,ltr,rtl,|,fullscreen",
+			init_instance_callback : "onInstanceInit",
         });
      </script>
         <title><?= $title ?></title>
@@ -29,10 +30,10 @@
 
 		 
 
-        
-    <body>
+<body>
 		
         <?= $content ?>
+
 	<?php
 	if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])){
 	echo	'<a href="index.php?action=gestionAdmin">Portail d\'administration</a> <br />';	
@@ -43,6 +44,6 @@
 	}
 	?>
 
-	
-    </body>
+
+</body>
 </html>

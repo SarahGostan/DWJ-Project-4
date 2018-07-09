@@ -2,6 +2,8 @@
 
 	require_once('model/UsersManager.php');
 	require_once('model/PostManager.php');
+	require_once('model/CommentManager.php');
+	require_once('class/sessionUser.php');
 
 
 
@@ -35,7 +37,7 @@ function updatePost($id, $title, $resume, $content){
 	
 	$updatedPost = $postManager->updatePost($id, $title, $resume, $content);
 
-	if ($editedPost === false){
+	if ($updatedPost === false){
 		  throw new Exception('Impossible de modifier ce billet');
 	}
 	else{
@@ -60,14 +62,20 @@ function openPost($id){
 	}
 
 function gestionAdmin(){
-	require('view/admin/administration.php');
-	
+	require('view/admin/administration.php');	
+}
+
+
+function logoff(){
+	$userSession = new UserSession();
+	$deconnexion = $userSession->logoff();
+	header('Location: index.php?action=login');
 }
 
 function deleteComment($id){
 	$moderationManager = new CommentManager();
-	$supprComm = $moderationManager->deleteComment($id);
-	if ($deletedComment === false){
+	$deleteComment = $moderationManager->deleteComment($id);
+	if ($deleteComment === false){
 			   throw new Exception('Impossible de supprimer ce commentaire');
 		}
 		else{
@@ -78,8 +86,8 @@ function deleteComment($id){
 
 function deleteReport($id){
 	$moderationManager = new CommentManager();
-	$supprReport = $moderationManager->deleteReport($id);
-	if ($deletedReport === false){
+	$deleteReport = $moderationManager->deleteReport($id);
+	if ($deleteReport === false){
 			   throw new Exception('Impossible de supprimer ce report');
 		}
 		else{
@@ -108,13 +116,10 @@ function authenticize($pseudo, $password){
 	$login = $adminManager->logAdmin($pseudo, $password);
 	if ($login == false){
 		throw new Exception('Identifiant ou mot de passe incorrect.');
-
 	}
 	else {
-		session_start();
 		$_SESSION['id'] = $login['id'];
 		$_SESSION['pseudo'] = $login['name'];
-	//	var_dump('test');
 		header('Location: http://dwj-projet4-sarahgostan.fr/index.php');
 		exit();
 	}

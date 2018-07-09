@@ -45,7 +45,7 @@
 
 <section id="commentaires">
 
-	<form id="formCommentaire" action = "index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post" >
+	<form id="formCommentaire" action = "index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
 		<h2>Commentaires</h2>
 		<label for="pseudo">Votre pseudo</label>
 		<input type="text" name="pseudo" id="pseudo" /><br />
