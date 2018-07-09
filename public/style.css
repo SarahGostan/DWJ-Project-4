@@ -1,0 +1,296 @@
+@font-face {
+    font-family: 'Gondola';
+    src: url('GondolaSD.ttf');
+}
+
+html{
+	background-color: #121212;
+	color: #dcd3b6;
+}
+
+p{
+	font-family: Georgia, Verdana;
+	
+}
+
+
+#postsContent{
+	width: 90%;
+	margin: auto;
+}
+
+
+h1{
+	font-family: Gondola, cursive;
+	font-size: 48px;
+}
+
+h3{
+	font-family: Gondola, cursive;
+	font-size: 44px;
+}
+
+h1{
+	text-align: center;
+
+}
+
+
+header, nav{
+
+	width: 60%;
+	margin: auto;
+}
+
+
+nav ul{
+	display: flex;
+	justify-content: space-around;
+	list-style-type: none; 
+}
+
+.style-one {
+ border: 0;
+height: 1px;
+background-image: -webkit-linear-gradient(left, #f6f4ee, #c2b189, #f6f4ee);
+
+}
+
+
+
+#footband{
+	display: flex;
+	justify-content: space-between;
+}
+
+
+#footband a{
+	text-decoration: none;
+	color: #d3c7aa;
+}
+
+#post, #actualAbstract{
+	
+	
+	width: 33em;
+	margin: auto;
+	font-size: 21px;
+	line-height: 1.5;
+}
+
+#post::first-letter{
+	font-size: 5em;
+	font-family: 'Gondola', serif;
+	float: left;
+}
+
+#post{
+	margin-top: 50px;
+	padding-bottom: 50px;
+	border-bottom: 1px solid #d3c7aa;
+}
+
+#editeur{
+    width: 500px; 
+    height: 200px; 
+    border: 1px solid black;
+    padding: 5px;
+    overflow: auto; 
+}
+
+
+
+/* ******************************* MINIATURES POST ***************************************** */
+
+
+
+#nextAbstract, #previousAbstract, #actualAbstract{
+	width: 33%;
+	text-align: center;
+}
+
+
+#listPostsAdmin{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: flex-end;
+	width: 60%;
+	margin: auto;
+}
+
+
+.abstract{
+	margin: auto;
+	text-align: justify;
+	border-bottom: 1px solid #c2b189;
+	width: 400px;
+	height: auto;
+	overflow: hidden;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	height: 400px;
+	overflow: auto;
+
+}
+
+.abstract a{
+
+}
+
+
+
+
+#newPost{
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	margin: auto;
+}
+
+#content{
+	height: 600px;
+}
+
+#resume{
+	height: 150px;
+}
+
+.title{
+	width: 400px;
+	margin: auto;
+}
+
+
+
+::-webkit-scrollbar {									/* Scrollbars */
+	width: 14px;
+	height: 14px;
+	background: #dcd3b6 0 0 repeat;
+}
+
+
+.presAdmin{
+	display: flex;
+	flex-direction: column;
+}
+
+
+#contenu{
+	width: 500px;
+	height: 50px;
+}
+
+.billets{
+	width: 500px;
+	border: 1px solid red;
+	height: 200px;
+	padding: 10px;
+	font-size: 18px;
+	overflow: auto;
+	text-align: justify;
+	color: white;
+}
+
+h2{
+	text-align: center;
+
+}
+
+.sous_billet{
+	position: fixed;
+
+}
+
+#chapitre_complet{
+		color: #dcd3b6;
+}
+
+.autour_contenu{
+	position: fixed;
+}
+
+#commentaires{ /* Section contenant tous les commentaires */
+	background-color: #dcd3b6;
+	color: #121212;
+	font-family: Verdana;
+	padding: 10px;
+}
+
+#commentaires p{
+	text-align: justify;
+}
+
+.lienSignal{
+	position: absolute;
+	right: 10%;
+
+} 
+
+#formCommentaire{
+	text-align: center;
+	margin: auto;
+	background-color:  #dcd3b6;
+	width: 50%;
+	padding: 5px;
+	color: #121212;
+}
+
+.commentaire{ /* Chaque commentaire, individuellement */
+	padding: 5px;
+	border-bottom: 2px solid #dcd3b6;
+	display: flex;
+}
+
+.contenuCommentaire{
+	width: 50%;
+	margin: 5px;
+	padding: 5px;
+
+}
+.auteur{
+	font-weight: bold;
+}
+
+.moderation{
+	color: red;
+}
+
+
+.descriptifCommentaire{
+	width: 180px;
+	text-shadow: 1px 1px 1px black;
+	margin: 5px;
+	padding: 5px;
+	border-right: 1px solid grey;
+	
+}
+
+.descriptifCommentaire p{
+	display: flex;
+align-items: space-around;
+	flex-direction: column;
+
+}
+
+
+
+.reportedComment{
+	border: 1px solid white;
+}
+
+
+#formLogin{
+	margin: auto;
+	width: 25%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #dcd3b6;
+	padding: 10px;
+	color: #121212;
+}
+
