@@ -45,7 +45,6 @@ class CommentManager extends Manager{
 		$db = $this->dbConnect();
 		$comment = $db->prepare('DELETE FROM comments WHERE id = ?');
 		$deletedComm = $comment->execute(array($id));
-		echo "<p class='moderation'>Commentaire supprimé</p>";
 		return $deletedComm;
 	}
 	

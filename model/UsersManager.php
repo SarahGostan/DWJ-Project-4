@@ -4,7 +4,6 @@ require_once("Database.php");
 
 class UsersManager extends Manager{
 	
-	
 	public function logAdmin($pseudo, $password){
 		$db = $this->dbConnect();
 		$req = $db->prepare('SELECT id, name, password FROM users WHERE name = :name');

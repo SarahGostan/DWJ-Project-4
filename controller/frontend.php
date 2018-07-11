@@ -83,7 +83,8 @@
 		}
 		else{
 			header('Location: index.php?action=viewPost&id=' . $postId);
-			exit();
+			echo '<script language="javascript">alert("Commentaire signalé !");</script>';
+		exit();
 		}
 			
 			

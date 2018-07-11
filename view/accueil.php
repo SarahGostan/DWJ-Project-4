@@ -1,9 +1,10 @@
 <?php $title= "Accueil";
  ob_start(); ?>
-
-	<p>Bonjour ! Voici la liste des derniers billets</p>
-
-
+	
+	<section id="accueil">
+		<p>Bonjour ! Voici la liste des derniers billets</p>
+	</section>
+	<section id="chapitres">
 	<?php
 
 			
@@ -31,7 +32,9 @@
 	
 	$posts->closeCursor();
 	?>
-	<p>Page :
+	</section>
+
+	<p id="pages">Page :
 	
 	<?php
 	

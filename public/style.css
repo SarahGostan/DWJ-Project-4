@@ -5,38 +5,13 @@
 
 body{
 	margin: 0;
-}
-html{
-	background-color: #121212;
+	background-color: black;
 	color: #dcd3b6;
+	font-family: Georgia, Verdana, sans-serif;
 }
 
 p{
-	font-family: Georgia, Verdana;
-	
-}
-
-footer{
-	position: fixed;
-	bottom: 0;
-	background-color: #404040;
-	color: white;
-	width: 100%;
-	display: flex;
-	justify-content: flex-end;
-}
-
-footer a{
-	color: white;
-	text-decoration: none;
-	padding: 5px;
-	margin-right: 10px;
-}
-
-
-#postsContent{
-	width: 90%;
-	margin: auto;
+	font-family: Georgia, Verdana;	
 }
 
 
@@ -56,11 +31,26 @@ h1{
 }
 
 
+a{
+	text-decoration: none;
+	color: #c9aa71;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+a:hover{
+	transition: 0.5s;
+	color: #f1e6d0;
+	
+}
+
 header, nav{
 
 	width: 60%;
 	margin: auto;
 }
+
+
 
 
 nav ul{
@@ -78,16 +68,21 @@ background-image: -webkit-linear-gradient(left, #f6f4ee, #c2b189, #f6f4ee);
 
 
 
+
+#postsContent{
+	width: 90%;
+	margin: auto;
+}
+
+
 #footband{
 	display: flex;
 	justify-content: space-between;
 }
 
 
-#footband a{
-	text-decoration: none;
-	color: #d3c7aa;
-}
+
+	
 
 #post, #actualAbstract{
 	
@@ -140,20 +135,28 @@ background-image: -webkit-linear-gradient(left, #f6f4ee, #c2b189, #f6f4ee);
 }
 
 
+
+#accueil{
+	padding: 30px;
+	background-color: #404040;
+	margin: auto;
+	text-align: center;
+	margin-top: 30px;
+}
+
 .abstract{
 	margin: auto;
 	text-align: justify;
 	border-bottom: 1px solid #c2b189;
 	width: 400px;
-	height: auto;
 	overflow: hidden;
 	padding: 20px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
-	height: 400px;
 	overflow: auto;
+	padding: 10px;
+	margin-bottom: 30px;
 
 }
 
@@ -162,13 +165,17 @@ background-image: -webkit-linear-gradient(left, #f6f4ee, #c2b189, #f6f4ee);
 }
 
 
-
+#pages{
+	position: fixed;
+	bottom: 40px;
+}
 
 #newPost{
 	display: flex;
 	flex-direction: column;
 	width: 50%;
 	margin: auto;
+	padding: 50px;
 }
 
 #content{
@@ -312,5 +319,25 @@ align-items: space-around;
 	background-color: #dcd3b6;
 	padding: 10px;
 	color: #121212;
+}
+
+
+
+
+footer{
+	position: fixed;
+	bottom: 0;
+	background-color: #404040;
+	color: white;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+footer a{
+	color: white;
+	text-decoration: none;
+	padding: 5px;
+	margin-right: 10px;
 }
 

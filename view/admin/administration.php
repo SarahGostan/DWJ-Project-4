@@ -5,7 +5,7 @@ ob_start();?>
 
 	<div id="presAdmin">
 	<p> Bienvenue sur le portail d'administration </p>
-	<a href="index.php?action=moderationAdmin">Modération des commentaires</a>
+	<a href="index.php?action=moderationAdmin">Modération des commentaires</a><br />
 	<a href="index.php?action=newPostAdmin">Publier un nouveau billet</a>
 	</div>
 		

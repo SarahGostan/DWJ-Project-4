@@ -17,7 +17,7 @@
         <link href="public/style.css" rel="stylesheet" /> 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-	
+	<body>
 	<header>
 		<h1> Billet simple pour l'Alaska</h1>
 		
@@ -30,10 +30,10 @@
 
 		 
 
-<body>
+
 		
         <?= $content ?>
-
+<footer>
 	<?php
 	if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])){
 	echo	'<a href="index.php?action=gestionAdmin">Portail d\'administration</a> <br />';	
@@ -43,7 +43,7 @@
 		echo	'<a href="index.php?action=login">Authentification</a>';
 	}
 	?>
-
+</footer>
 
 </body>
 </html>

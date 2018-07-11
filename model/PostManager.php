@@ -80,7 +80,6 @@ public function getLastPost($postId){
 		$db = $this->dbConnect();
 		$post = $db->prepare('DELETE FROM posts WHERE id = ?');
 		$deletedPost = $post->execute(array($id));
-		echo "<p class='moderation'>Commentaire supprimé</p>";
 		return $deletedPost;
 	}
 	
