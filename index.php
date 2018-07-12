@@ -197,6 +197,7 @@ try{
 		/* Page d'index par défaut */
 	else
 	{
+		
 		listPosts();
 	}
 }

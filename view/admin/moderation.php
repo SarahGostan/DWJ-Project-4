@@ -9,10 +9,11 @@
 ?>
 
 
-
-
-<a href="index.php?action=gestionAdmin">Retour au portail d'administration</a>
-<p> Bienvenue sur la page des commentaires signalés.<br /> Voici les commentaires à modérer : </p>
+<div id="lienAdmin">
+<a href="index.php?action=gestionAdmin">Retour au portail d'administration</a><br />
+<a href="index.php?action=newPostAdmin">Publier un nouveau billet</a>
+</div>
+<aside class="infoMessage">Voici les commentaires signalés : </aside>
 
 <?php
 		while ($data = $moderComm->fetch()){

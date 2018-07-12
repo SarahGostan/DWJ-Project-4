@@ -3,11 +3,13 @@
 $title= "Administration";
 ob_start();?>
 
-	<div id="presAdmin">
-	<p> Bienvenue sur le portail d'administration </p>
+	<div id="lienAdmin">
 	<a href="index.php?action=moderationAdmin">Modération des commentaires</a><br />
 	<a href="index.php?action=newPostAdmin">Publier un nouveau billet</a>
+	<aside class="infoMessage"> Bienvenue sur le portail d'administration </aside>
 	</div>
+
+	
 		
 <div id="listPostsAdmin">
 		

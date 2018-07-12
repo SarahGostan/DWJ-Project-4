@@ -74,7 +74,7 @@ function deletePost($id){
 function openPost($id){
 	$postManager = new PostManager();
 	$updatePost = $postManager->getPost($id);
-	require ('view/admin/updatebillet.php');
+	require ('view/admin/updatePost.php');
 }
 
 function updatePost($id, $title, $resume, $content){

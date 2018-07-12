@@ -1,3 +1,4 @@
+<?php $checkAuth = new UserSession();?>
 <?php $title= "Lecture"; ?>
 <?php ob_start(); ?>
 
@@ -12,7 +13,7 @@
 			<p><?= strip_tags($post['content'], '<strong>, <span>, <em>, <sup>, <img>, <br />, <a>, <h1>, <h2>, <h3>, <h4>, <h5>, <sub>, <sup>'); ?></p>
 
 	</div>
-	<?php if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])){
+	<?php if ($checkAuth->isAuthenticated()){
 
 ?>
 	<div id="deletePostLink">

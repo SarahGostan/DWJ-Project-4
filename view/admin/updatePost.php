@@ -8,24 +8,11 @@
 if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])){
 
 ?>
-
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Modifier un billet</title>
-		<link rel="stylesheet" href="style.css" >
-		<script src="public/editeur.js"></script>
-    </head>
-	
-    <body>
-	
-	<p> Bienvenue sur le portail d'administration </p>
+<div id="lienAdmin">
 	<a href="index.php?action=gestionAdmin">Retour au portail d'administration</a><br />
-	<a href="index.php?action=gestionAdmin">Modération des commentaires</a>
-	
-	<p>Modifier ce billet :</p>
+	<a href="index.php?action=moderationAdmin">Modération des commentaires</a>
+</div>
+	<aside class="infoMessage">Modifier ce billet :</aside>
 	
 		<form id="newPost" action = "index.php?action=updatePostValidAdmin" method="post">	
 			<label for="title" class="title">Titre du chapitre</label>
@@ -35,16 +22,9 @@ if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])){
 			<label for="content">Contenu du chapitre</label>
 			<textarea type="texte" name="content" id="content" /><?=($updatePost['content']);?></textarea><br />
 			<input type="hidden" name="idPost" id="idPost" value="<?=($updatePost['id']);?>">
-			<input type="submit" value = "Envoyer"/>
+			<input type="submit" class="sendPost" value ="Envoyer"/>
 
-		</form>
-		
-		
-
-	
-	</body>
-	
-	</html>
+		</form>	
 <?php }
 else {
 	throw new Exception ("Vous n'avez pas l'autorisation d'accéder à cette page");

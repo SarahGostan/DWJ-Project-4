@@ -1,4 +1,5 @@
-<?php $checkAuth = new UserSession(); ?>
+<?php $checkAuth = new UserSession(); 
+$flashMessage = new FlashMessage(); ?>
 
 <!DOCTYPE html>
 <html>
@@ -31,12 +32,12 @@
 
 	</header>
 	
-
+<?php if ($flashMessage->messageExist()){
+	?>
+	<aside class="infoMessage" id="messageFlash"><?= $flashMessage->readMessage(); ?></aside>
+<?php } ?>
 		 
-
-
-		
-        <?= $content ?>
+     <?= $content ?>
 <footer>
 	<?php
 

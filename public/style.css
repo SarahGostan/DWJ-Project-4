@@ -119,6 +119,21 @@ background-image: -webkit-linear-gradient(left, #f6f4ee, #c2b189, #f6f4ee);
 }
 
 
+.infoMessage{
+	margin: auto;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	width: 25%;
+	height: auto;
+	background-color: #dcd3b6;
+	color: #121212;
+	padding: 10px;
+	text-align: center;
+}
+
+#messageFlash{
+	font-weight: bold;
+}
 
 /* ******************************* MINIATURES POST ***************************************** */
 
@@ -153,7 +168,6 @@ background-image: -webkit-linear-gradient(left, #f6f4ee, #c2b189, #f6f4ee);
 	text-align: justify;
 	border-bottom: 1px solid #c2b189;
 	width: 400px;
-	overflow: hidden;
 	padding: 20px;
 	display: flex;
 	flex-direction: column;
@@ -161,7 +175,7 @@ background-image: -webkit-linear-gradient(left, #f6f4ee, #c2b189, #f6f4ee);
 	overflow: auto;
 	padding: 10px;
 	margin-bottom: 30px;
-
+	height: 300px;
 }
 
 .abstract a{
@@ -173,6 +187,8 @@ background-image: -webkit-linear-gradient(left, #f6f4ee, #c2b189, #f6f4ee);
 	position: fixed;
 	bottom: 40px;
 }
+
+
 
 #newPost{
 	display: flex;
@@ -189,7 +205,10 @@ background-image: -webkit-linear-gradient(left, #f6f4ee, #c2b189, #f6f4ee);
 #resume{
 	height: 150px;
 }
-
+.sendPost{
+	width: 100px;
+	margin: auto;
+}
 .title{
 	width: 400px;
 	margin: auto;
@@ -249,6 +268,11 @@ h2{
 
 .autour_contenu{
 	position: fixed;
+}
+
+#lienAdmin{
+	margin-top: 30px;
+	padding: 10px;
 }
 
 #commentaires{ /* Section contenant tous les commentaires */
@@ -326,6 +350,7 @@ h2{
 	background-color: #dcd3b6;
 	padding: 10px;
 	color: #121212;
+	margin-top: 20px;
 }
 
 /* - - - - - - - - - - - - - - Barre de connexion - - - - - - - - - - - - - - - */
