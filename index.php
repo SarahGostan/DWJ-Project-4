@@ -7,18 +7,14 @@ error_reporting( E_ALL );
 
 	require('controller/frontend.php');
 	require('controller/backend.php');
-	
+
 	
 try{
 	if (isset($_GET['action']))
 	{
 		if (strstr($_GET['action'], 'Admin'))
 		{
-			if (!isset($_SESSION['id']) || !isset($_SESSION['pseudo']))
-			{	
-			throw new Exception ("Cette action est réservée aux administrateurs");
-			exit();
-			}
+		checkAuth();
 		}
 
 

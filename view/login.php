@@ -1,7 +1,11 @@
 <?php $title= "Lecture";
- ob_start(); ?>
+ ob_start();
 
-
+if ($flashMessage->messageExist()){
+	?>
+	<aside><?= $flashMessage->readMessage(); ?></aside>
+<?php } ?>
+	
 	<form id="formLogin" action = "index.php?action=authenticize" method="post" >
 		<h2>Identification</h2>
 		<label for="identifiant">Identifiant</label>

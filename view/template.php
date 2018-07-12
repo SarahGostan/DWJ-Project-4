@@ -1,3 +1,5 @@
+<?php $checkAuth = new UserSession(); ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,10 +25,12 @@
 		
 		<h2> Un livre en ligne</h2>
 
-		 <hr class="style-one"></hr>
+	
 		<a href="index.php">Index</a>
-	</header>
+			 <hr class="style-one"></hr>
 
+	</header>
+	
 
 		 
 
@@ -35,7 +39,8 @@
         <?= $content ?>
 <footer>
 	<?php
-	if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])){
+
+	if ($checkAuth->isAuthenticated()){
 	echo	'<a href="index.php?action=gestionAdmin">Portail d\'administration</a> <br />';	
 	echo	'<a href="index.php?action=logoff">Déconnexion</a>';
 	}

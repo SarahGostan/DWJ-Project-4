@@ -3,7 +3,8 @@
 	require_once('model/UsersManager.php');
 	require_once('model/PostManager.php');
 	require_once('model/CommentManager.php');
-	require_once('class/sessionUser.php');
+	require_once('class/UserSession.php');
+	require_once('class/FlashMessage.php');
 
 /* - - - - - - - - - - - - - - - Gestion Commentaires - - - - - - - - - - - - - - - */
 
@@ -106,6 +107,20 @@ function addPost($title, $resume, $content){
 
 /* - - - - - - - - - - - - - - - Gestion Connexion - - - - - - - - - - - - - - - */
 
+function checkAuth(){
+	$userSession = new UserSession();
+	$checkAuth = $userSession->isAuthenticated();
+	if ($checkAuth == false){
+		$flashMessage = new FlashMessage();
+		$flashMessage->addMessage("Cette action est réservée aux administrateurs");
+		header('Location: index.php?action=login');
+		exit();
+	}
+}
+
+
+
+
 
 function logoff(){
 	$userSession = new UserSession();
@@ -115,18 +130,20 @@ function logoff(){
 
 function login(){
 	$userSession = new UserSession();
+	$flashMessage = new FlashMessage();
 	require('view/login.php');
 }
 
 function authenticize($pseudo, $password){
+	
 	$adminManager = new UsersManager();
 	$login = $adminManager->logAdmin($pseudo, $password);
 	if ($login == false){
 		throw new Exception('Identifiant ou mot de passe incorrect.');
 	}
 	else {
-		$_SESSION['id'] = $login['id'];
-		$_SESSION['pseudo'] = $login['name'];
+		$sessionCreate = new UserSession();
+		$sessionCreate->login($login['id'], $login['name']);
 		header('Location: http://dwj-projet4-sarahgostan.fr/index.php');
 		exit();
 	}

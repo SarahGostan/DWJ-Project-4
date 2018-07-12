@@ -27,6 +27,7 @@ h3{
 
 h1{
 	text-align: center;
+	margin: 0;
 
 }
 
@@ -45,10 +46,12 @@ a:hover{
 }
 
 header, nav{
-
-	width: 60%;
+	margin-top: 0;
+	width: 100%;
 	margin: auto;
+	background-color: #404040;
 }
+
 
 
 
@@ -60,6 +63,8 @@ nav ul{
 }
 
 .style-one {
+	width: 60%;
+	margin: auto;
  border: 0;
 height: 1px;
 background-image: -webkit-linear-gradient(left, #f6f4ee, #c2b189, #f6f4ee);
@@ -138,7 +143,6 @@ background-image: -webkit-linear-gradient(left, #f6f4ee, #c2b189, #f6f4ee);
 
 #accueil{
 	padding: 30px;
-	background-color: #404040;
 	margin: auto;
 	text-align: center;
 	margin-top: 30px;
@@ -193,12 +197,19 @@ background-image: -webkit-linear-gradient(left, #f6f4ee, #c2b189, #f6f4ee);
 
 
 
-::-webkit-scrollbar {									/* Scrollbars */
+::-webkit-scrollbar{
 	width: 14px;
 	height: 14px;
-	background: #dcd3b6 0 0 repeat;
+	background-color: #dcd3b6;
+	-webkit-border-radius: 5px;
 }
 
+
+::-webkit-scrollbar-thumb {
+    background: #404040; 
+	-webkit-border-radius: 5px;
+	
+}
 
 .presAdmin{
 	display: flex;
@@ -298,16 +309,12 @@ h2{
 
 .descriptifCommentaire p{
 	display: flex;
-align-items: space-around;
+	align-items: space-around;
 	flex-direction: column;
 
 }
 
 
-
-.reportedComment{
-	border: 1px solid white;
-}
 
 
 #formLogin{
@@ -321,7 +328,7 @@ align-items: space-around;
 	color: #121212;
 }
 
-
+/* - - - - - - - - - - - - - - Barre de connexion - - - - - - - - - - - - - - - */
 
 
 footer{
@@ -339,5 +346,15 @@ footer a{
 	text-decoration: none;
 	padding: 5px;
 	margin-right: 10px;
+}
+
+
+
+/* - - - - - - - - - - - - - - Portail d'administration - - - - - - - - - - - - - - - */
+
+
+
+.reportedComment{
+	border: 1px solid white;
 }
 

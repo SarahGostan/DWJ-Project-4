@@ -1,7 +1,6 @@
 <?php $title= "Accueil";
  ob_start(); ?>
-	
-	<section id="accueil">
+ <section id="accueil">
 		<p>Bonjour ! Voici la liste des derniers billets</p>
 	</section>
 	<section id="chapitres">
@@ -52,5 +51,5 @@
 				
 			?> 
 			</p>
-	<?php $content = ob_get_clean(); ?>
-	<?php require('template.php'); ?>
+<?php $content = ob_get_clean(); ?>
+<?php require('template.php'); ?>
