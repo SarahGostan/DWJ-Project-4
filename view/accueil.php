@@ -1,8 +1,8 @@
 <?php $title= "Accueil";
  ob_start(); ?>
- <section id="accueil">
-		<p>Bonjour ! Voici la liste des derniers billets</p>
-	</section>
+
+		<?php $info= "Bonjour ! Voici la liste des derniers billets" ?>
+
 	<section id="chapitres">
 	<?php
 
@@ -45,11 +45,12 @@
 		}	
 		else
 		{
-			echo ' <a href= '. $page_index . '?page='.$i.'>'.$i.'</a> ';
+			echo ' <a href=index.php?page='.$i.'>'.$i.'</a> ';
 		}
 }
 				
 			?> 
 			</p>
+
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>

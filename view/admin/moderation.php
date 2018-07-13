@@ -10,8 +10,7 @@
 
 
 
-<aside class="infoMessage">Voici les commentaires signalés : </aside>
-
+<?php $info="Voici les commentaires signalés :" ?>
 <?php
 		while ($data = $moderComm->fetch()){
 			

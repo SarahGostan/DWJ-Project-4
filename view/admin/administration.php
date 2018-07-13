@@ -4,7 +4,7 @@ $title= "Administration";
 ob_start();?>
 
 
-	<aside class="infoMessage"> Bienvenue sur le portail d'administration </aside>
+	<?php $info="Bienvenue sur le portail d'administration" ?>
 
 
 	

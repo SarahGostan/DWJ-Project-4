@@ -1,5 +1,7 @@
 <?php $checkAuth = new UserSession();?>
+
 <?php $title= "Lecture"; ?>
+<?php $info=null?>
 <?php ob_start(); ?>
 
 <section id="postsContent">

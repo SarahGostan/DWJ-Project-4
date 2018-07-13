@@ -5,7 +5,7 @@
 ?>
 
 
-	<aside class="infoMessage">Poster un nouveau billet :</aside>
+	<?php $info="Poster un nouveau billet :"?>
 	
 		<form id="newPost" action = "index.php?action=addBilletAdmin" method="post">	
 			<label for="title">Titre</label>

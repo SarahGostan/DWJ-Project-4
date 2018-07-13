@@ -29,6 +29,7 @@ a{
 	color: #c9aa71;
 	text-transform: uppercase;
 	font-weight: bold;
+	font-family: Verdana, sans-serif;
 }
 
 a:hover{
@@ -60,11 +61,14 @@ background-image: -webkit-linear-gradient(left, #f6f4ee, #c2b189, #f6f4ee);
 
 }
 
+#chapitres{
+	margin: auto;
+}
 
 
 
 #postsContent{
-	width: 90%;
+	width: 75%;
 	margin: auto;
 }
 
@@ -107,17 +111,30 @@ background-image: -webkit-linear-gradient(left, #f6f4ee, #c2b189, #f6f4ee);
     overflow: auto; 
 }
 
+.constructPage{
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
 
 .infoMessage{
-	margin: auto;
-	margin-bottom: 20px;
-	margin-top: 20px;
-	width: 25%;
+	width: 16%;
 	height: auto;
 	background-color: #dcd3b6;
 	color: #121212;
 	padding: 10px;
 	text-align: center;
+	font-family: Verdana, sans-serif;
+	font-size: 18px;
+		min-height: 700px;
+}
+
+.infoMessage p{
+	position: fixed;
+	max-width: 15%;
+	box-shadow: 1px 5px 15px #404040;
+	padding: 5px;
+
 }
 
 #messageFlash{
@@ -175,6 +192,7 @@ background-image: -webkit-linear-gradient(left, #f6f4ee, #c2b189, #f6f4ee);
 #pages{
 	position: fixed;
 	bottom: 40px;
+	color: #121212;
 }
 
 
@@ -269,6 +287,7 @@ h2{
 	color: #121212;
 	font-family: Verdana;
 	padding: 10px;
+	width: 100%;
 }
 
 #commentaires p{
@@ -366,9 +385,17 @@ footer a{
 
 /* - - - - - - - - - - - - - - Portail d'administration - - - - - - - - - - - - - - - */
 
-
+li{
+	padding: 5px;
+}
 
 .reportedComment{
 	border: 1px solid white;
 }
 
+@media screen and (max-width: 950px)
+{
+.infoMessage{
+	display: none;
+}
+}

@@ -9,7 +9,7 @@ if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])){
 
 ?>
 
-	<aside class="infoMessage">Modifier ce billet :</aside>
+	<?php $info="Modifier ce billet :"?>
 	
 		<form id="newPost" action = "index.php?action=updatePostValidAdmin" method="post">	
 			<label for="title" class="title">Titre du chapitre</label>

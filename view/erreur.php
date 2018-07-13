@@ -1,4 +1,5 @@
 <?php $title= "Erreur"; ?>
+<?php $info="Page introuvable"?>
 <?php ob_start();
 
 echo 'Erreur : ' . $e->getMessage() . '<br />';

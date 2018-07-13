@@ -33,7 +33,7 @@ $flashMessage = new FlashMessage(); ?>
 			{ 
 			echo '<li><a href="index.php?action=gestionAdmin">Portail d\'administration</a>';
 			echo '<li><a href="index.php?action=newPostAdmin">Publier un nouveau billet</a></li>';
-			echo '<li><a href="index.php?action=moderationAdmin">Modération des commentaires</a></li>';
+			echo '<li><a href="index.php?action=moderationAdmin">Modération</a></li>';
 			 } ?>
 		</ul>
 	</nav>
@@ -45,14 +45,17 @@ $flashMessage = new FlashMessage(); ?>
 	?>
 	<aside class="infoMessage" id="messageFlash"><?= $flashMessage->readMessage(); ?></aside>
 <?php } ?>
-		 
+	<div class="constructPage">	 
+		<div class="infoMessage">
+		<p><?= $info ?></p>
+		</div>
      <?= $content ?>
+	</div>
 <footer>
 	<?php
 
 	if ($checkAuth->isAuthenticated())
 	{ 
-	echo '<a href="index.php?action=gestionAdmin">Portail d\'administration</a> <br />';
 	echo '<a href="index.php?action=logoff">Déconnexion</a>';
 	}
 	else 

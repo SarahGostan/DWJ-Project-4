@@ -1,4 +1,5 @@
 <?php $title= "Lecture";
+ $info="Connexion à l'espace administration";
  ob_start();
 
 if ($flashMessage->messageExist()){
