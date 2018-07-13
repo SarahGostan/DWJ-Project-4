@@ -22,16 +22,17 @@ $flashMessage = new FlashMessage(); ?>
     </head>
 	<body>
 	<header>
-		<h1> Billet simple pour l'Alaska</h1>
+		<div id="title"><h1> Billet simple pour l'Alaska</h1>
 		
 		<h2> Un livre en ligne</h2>
-
+		</div>
 	<nav>
 		<ul>
-			<li><a href="index.php">Index</a></li>
-			<?php if ($checkAuth->isAuthenticated())
+		<?php
+			echo '<li><a href="index.php">Index</a></li>';
+			 if ($checkAuth->isAuthenticated())
 			{ 
-			echo '<li><a href="index.php?action=gestionAdmin">Portail d\'administration</a>';
+			echo '<li><a href="index.php?action=gestionAdmin">Portail d\'administration</a></li>';
 			echo '<li><a href="index.php?action=newPostAdmin">Publier un nouveau billet</a></li>';
 			echo '<li><a href="index.php?action=moderationAdmin">Modération</a></li>';
 			 } ?>

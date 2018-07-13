@@ -11,6 +11,7 @@
 
 
 <?php $info="Voici les commentaires signalés :" ?>
+<div id="reportedComments">
 <?php
 		while ($data = $moderComm->fetch()){
 			
@@ -32,7 +33,7 @@
 		
 			<?php	} ?>
 
-
+</div>
 <?php 
 
  $content = ob_get_clean();
