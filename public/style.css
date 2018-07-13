@@ -10,25 +10,17 @@ body{
 	font-family: Georgia, Verdana, sans-serif;
 }
 
-p{
-	font-family: Georgia, Verdana;	
-}
-
 
 h1{
 	font-family: Gondola, cursive;
 	font-size: 48px;
+	text-align: center;
+	margin: 0;
 }
 
 h3{
 	font-family: Gondola, cursive;
 	font-size: 44px;
-}
-
-h1{
-	text-align: center;
-	margin: 0;
-
 }
 
 
@@ -51,9 +43,6 @@ header, nav{
 	margin: auto;
 	background-color: #404040;
 }
-
-
-
 
 
 nav ul{

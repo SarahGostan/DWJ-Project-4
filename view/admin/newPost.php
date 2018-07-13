@@ -4,10 +4,7 @@
  ob_start();
 ?>
 
-<div id="lienAdmin">
-	<a href="index.php?action=gestionAdmin">Retour au portail d'administration</a><br />
-	<a href="index.php?action=moderationAdmin">Modération des commentaires</a>
-</div>
+
 	<aside class="infoMessage">Poster un nouveau billet :</aside>
 	
 		<form id="newPost" action = "index.php?action=addBilletAdmin" method="post">	

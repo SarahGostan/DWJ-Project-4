@@ -26,8 +26,17 @@ $flashMessage = new FlashMessage(); ?>
 		
 		<h2> Un livre en ligne</h2>
 
-	
-		<a href="index.php">Index</a>
+	<nav>
+		<ul>
+			<li><a href="index.php">Index</a></li>
+			<?php if ($checkAuth->isAuthenticated())
+			{ 
+			echo '<li><a href="index.php?action=gestionAdmin">Portail d\'administration</a>';
+			echo '<li><a href="index.php?action=newPostAdmin">Publier un nouveau billet</a></li>';
+			echo '<li><a href="index.php?action=moderationAdmin">Modération des commentaires</a></li>';
+			 } ?>
+		</ul>
+	</nav>
 			 <hr class="style-one"></hr>
 
 	</header>
@@ -41,14 +50,17 @@ $flashMessage = new FlashMessage(); ?>
 <footer>
 	<?php
 
-	if ($checkAuth->isAuthenticated()){
-	echo	'<a href="index.php?action=gestionAdmin">Portail d\'administration</a> <br />';	
-	echo	'<a href="index.php?action=logoff">Déconnexion</a>';
+	if ($checkAuth->isAuthenticated())
+	{ 
+	echo '<a href="index.php?action=gestionAdmin">Portail d\'administration</a> <br />';
+	echo '<a href="index.php?action=logoff">Déconnexion</a>';
 	}
-	else {
+	else 
+	{
 		echo	'<a href="index.php?action=login">Authentification</a>';
 	}
 	?>
+	
 </footer>
 
 </body>

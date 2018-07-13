@@ -8,10 +8,7 @@
 if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])){
 
 ?>
-<div id="lienAdmin">
-	<a href="index.php?action=gestionAdmin">Retour au portail d'administration</a><br />
-	<a href="index.php?action=moderationAdmin">Modération des commentaires</a>
-</div>
+
 	<aside class="infoMessage">Modifier ce billet :</aside>
 	
 		<form id="newPost" action = "index.php?action=updatePostValidAdmin" method="post">	
