@@ -23,7 +23,7 @@ ob_start();?>
 					</h2>
 						<a href="index.php?action=viewPost&id=<?= $data['id']; ?>">Voir en entier</a>	
 			<a href="index.php?action=updatePostAdmin&id=<?= $data['id']; ?>">Modifier ce billet</a>
-			<a href="index.php?action=deletePostAdmin&id=<?= $data['id']; ?>">Supprimer ce billet</a>
+			<a href="index.php?action=deletePostAdmin&id=<?= $data['id']; ?>" onclick="return confirm('La suppression est définitive. Confirmer ?')">Supprimer ce billet</a>
 					<p>
 			<?= nl2br($data['resume']);		
 		

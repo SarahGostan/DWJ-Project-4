@@ -31,5 +31,6 @@ class FlashMessage {
 			}
 		}
 		return false;			
-	}	
+	}
+
 }

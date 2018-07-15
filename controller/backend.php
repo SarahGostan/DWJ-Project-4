@@ -67,6 +67,7 @@ function listPostsAdmin(){
 function deletePost($id){
 	$postManager = new PostManager();
 	$deletedPost = $postManager->deletePost($id);
+
 	if ($deletedPost === false){
 			   throw new Exception('Impossible de supprimer ce billet');
 		}
@@ -75,6 +76,7 @@ function deletePost($id){
 			$flashMessage->addMessage("Billet supprimé");
 			header('Location: index.php?action=gestionAdmin');	
 		}
+	
 }
 
 function openPost($id){

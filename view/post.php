@@ -21,7 +21,7 @@ ob_start();
 ?>
 	<div id="deletePostLink">
 		<a href="index.php?action=updatePostAdmin&id=<?= $post['id']; ?>">Modifier ce billet</a><br />
-	<a href="index.php?action=deletePostAdmin&id=<?= $post['id']?>">Supprimer ce billet</a>
+	<a href="index.php?action=deletePostAdmin&id=<?= $data['id']; ?>" onclick="return confirm('La suppression est définitive. Confirmer ?')">Supprimer ce billet</a>
 	</div>
 	<?php } ?>
 	<div id="footband">
