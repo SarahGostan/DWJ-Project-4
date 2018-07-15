@@ -1,8 +1,9 @@
-<?php $checkAuth = new UserSession();?>
-
-<?php $title= "Lecture"; ?>
-<?php $info=null?>
-<?php ob_start(); ?>
+<?php 
+$checkAuth = new UserSession();
+$title= "Lecture"; 
+$info=null;
+ob_start(); 
+?>
 
 <section id="postsContent">
 	<div id="actualAbstract">

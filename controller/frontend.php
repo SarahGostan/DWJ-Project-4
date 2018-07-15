@@ -82,6 +82,8 @@
 			throw new Exception('Impossible de signaler le commentaire');	
 		}
 		else{
+			$flashMessage = new FlashMessage();
+			$flashMessage->addMessage("Commentaire signalé !");
 			header('Location: index.php?action=viewPost&id=' . $postId);
 			echo '<script language="javascript">alert("Commentaire signalé !");</script>';
 		exit();

@@ -28,7 +28,9 @@ function deleteComment($id){
 			   throw new Exception('Impossible de supprimer ce commentaire');
 		}
 		else{
-			header('Location: http://dwj-projet4-sarahgostan.fr/index.php?action=gestionAdmin');
+			$flashMessage = new FlashMessage();
+			$flashMessage->addMessage("Commentaire supprimé");
+			header('Location: http://dwj-projet4-sarahgostan.fr/index.php?action=moderationAdmin');
 			exit();
 		}
 }
@@ -41,7 +43,9 @@ function deleteReport($id){
 			   throw new Exception('Impossible de supprimer ce report');
 		}
 		else{
-			header('Location: http://dwj-projet4-sarahgostan.fr/index.php?action=gestionAdmin');
+			$flashMessage = new FlashMessage();
+			$flashMessage->addMessage("Report supprimé");
+			header('Location: http://dwj-projet4-sarahgostan.fr/index.php?action=moderationAdmin');
 			exit();
 		}
 }
@@ -67,6 +71,8 @@ function deletePost($id){
 			   throw new Exception('Impossible de supprimer ce billet');
 		}
 		else{
+			$flashMessage = new FlashMessage();
+			$flashMessage->addMessage("Billet supprimé");
 			header('Location: index.php?action=gestionAdmin');	
 		}
 }
@@ -86,6 +92,8 @@ function updatePost($id, $title, $resume, $content){
 		  throw new Exception('Impossible de modifier ce billet');
 	}
 	else{
+		$flashMessage = new FlashMessage();
+		$flashMessage->addMessage("Billet mis à jour");
 		header('Location: index.php?action=gestionAdmin');
 		echo "Billet modifié";
 	}

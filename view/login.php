@@ -2,10 +2,6 @@
  $info="Connexion à l'espace administration";
  ob_start();
 
-if ($flashMessage->messageExist()){
-	?>
-	<aside><?= $flashMessage->readMessage(); ?></aside>
-	<?php }
 	
 
 ?>

@@ -22,10 +22,6 @@ $flashMessage = new FlashMessage(); ?>
     </head>
 	<body>
 	<header>
-		<div id="title"><h1> Billet simple pour l'Alaska</h1>
-		
-		<h2> Un livre en ligne</h2>
-		</div>
 	<nav>
 		<ul>
 		<?php
@@ -38,20 +34,28 @@ $flashMessage = new FlashMessage(); ?>
 			 } ?>
 		</ul>
 	</nav>
+		<div id="title"><h1> Billet simple pour l'Alaska</h1>
+		
+		<h2> Un livre en ligne</h2>
+		</div>
+	
 			 <hr class="style-one"></hr>
 
 	</header>
 	
 <?php if ($flashMessage->messageExist()){
 	?>
-	<aside class="infoMessage" id="messageFlash"><?= $flashMessage->readMessage(); ?></aside>
+	<aside id="messageFlash"><?= $flashMessage->readMessage(); ?></aside>
 <?php } ?>
-	<div class="constructPage">	 
-		<div class="infoMessage">
+	 
+		<?php
+		if ($info!=null){
+			?><div class="infoMessage">
 		<p><?= $info ?></p>
 		</div>
+		<?php } ?>
      <?= $content ?>
-	</div>
+
 <footer>
 	<?php
 
