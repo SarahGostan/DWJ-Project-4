@@ -23,6 +23,18 @@ h3{
 	font-size: 44px;
 }
 
+h4{
+	font-weight: bold;
+}
+
+.separation{
+	clear: both;
+	position: absolute;
+	height: 10em;
+	width: 1px;
+	background:  #c09c59;
+	margin: 5px;
+}
 
 a{
 	text-decoration: none;
@@ -144,11 +156,18 @@ background-image: -webkit-linear-gradient(left, #f6f4ee, #c2b189, #f6f4ee);
 
 
 
-#nextAbstract, #previousAbstract, #actualAbstract{
+#nextAbstract, #previousAbstract{
 	width: 33%;
 	text-align: center;
 }
 
+#nextAbstract{
+	margin-right: 10px;
+}
+
+#previousAbstract{
+	margin-left: 10px;
+}
 
 #listPostsAdmin{
 	display: flex;
@@ -169,9 +188,10 @@ background-image: -webkit-linear-gradient(left, #f6f4ee, #c2b189, #f6f4ee);
 	margin-top: 30px;
 }
 
+
+
 .abstract{
 	margin: auto;
-	text-align: justify;
 	border-bottom: 1px solid #c2b189;
 	width: 25%;
 	padding: 20px;
@@ -182,6 +202,7 @@ background-image: -webkit-linear-gradient(left, #f6f4ee, #c2b189, #f6f4ee);
 	padding: 10px;
 	margin-bottom: 30px;
 	height: 300px;
+	text-align: justify;
 }
 
 .abstract a{

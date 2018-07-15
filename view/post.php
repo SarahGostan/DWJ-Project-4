@@ -7,9 +7,7 @@ ob_start();
 
 <section id="postsContent">
 	<div id="actualAbstract">
-		<h3><?= (strip_tags($post['title']));?></h3><br />
-		
-		
+		<h3><?= (strip_tags($post['title']));?></h3>
 	</div>
 	<div id="post">
 
@@ -31,14 +29,17 @@ ob_start();
 	<?= ($lienPostPrecedent);  ?>
 		<div id="previousAbstract">
 			
-			<?= (strip_tags($lastPost['title']));?><br />
+			<h4><?= (strip_tags($lastPost['title']));?></h4><br />
 			<p><?= (strip_tags($lastPost['resume']));?></p>
 			
 		</div>
 		
+		<div>
+		<hr class="separation" />
+		</div>
 		
 		<div id="nextAbstract">
-			<?= (strip_tags($nextPost['title']));?><br />
+			<h4><?= (strip_tags($nextPost['title']));?></h4><br />
 		
 			<p><?= (strip_tags($nextPost['resume']));?></p>
 			

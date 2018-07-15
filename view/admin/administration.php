@@ -16,7 +16,7 @@ ob_start();?>
 	?>
 
 	
-		<div class="abstract">	<h2>
+		<div class="adminAbstract">	<h2>
 						<?= ($data['title']); ?><br />
 						<em>le <?= $data['date_creation'];
 									?></em>
