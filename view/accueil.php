@@ -1,42 +1,35 @@
 <?php $title= "Accueil";
- ob_start(); ?>
+ ob_start();
+$info= "Bonjour ! Voici la liste des derniers billets" 
+?>
 
-		<?php $info= "Bonjour ! Voici la liste des derniers billets" ?>
-
-	<section id="chapitres">
-	<?php
-
-			
-	while ($data = $posts->fetch())
-	{
-		?>	
-			<div class="abstract">	<h2>
-						<?= ($data['title']); ?><br />
-						<em>le <?= $data['date_creation'];
-									?></em>
-					</h2>
-					<p>
-			<?= nl2br($data['resume']);		
-		
-			?>
-					</p>
-					<a href="index.php?action=viewPost&id=<?= $data['id']; ?>">Voir en entier</a>
-				</div>
-				
-		<br />
-		
+<section id="chapters">
 
 <?php
-	 } 
+	while ($data = $posts->fetch())
+	{
+?>	
+	<div class="abstract">	
+		<h2>
+			<?= ($data['title']); ?><br />
+			<em>le <?= $data['date_creation'];?></em>
+		</h2>
+		<p>
+			<?= nl2br($data['resume']);?>
+		</p>
+		<a href="index.php?action=viewPost&id=<?= $data['id']; ?>">Voir en entier</a>
+	</div>	
 	
-	$posts->closeCursor();
-	?>
-	</section>
+<?php
+} 
+$posts->closeCursor();
+?>
+
+</section>
 
 	<p id="pages">Page :
-	
-	<?php
-	
+
+<?php	
 	for($i=1; $i<=$page_number; $i++)
 	{
 		if($i==$pageActuelle) 
@@ -47,10 +40,9 @@
 		{
 			echo ' <a href=index.php?page='.$i.'>'.$i.'</a> ';
 		}
-}
-				
-			?> 
-			</p>
-
+	}
+?> 
+	</p>
+	
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>

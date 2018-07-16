@@ -1,9 +1,6 @@
 <?php $title= "Lecture";
- $info="Connexion à l'espace administration";
- ob_start();
-
-	
-
+$info="Connexion à l'espace administration";
+ob_start();
 ?>
 	<form id="formLogin" action = "index.php?action=authenticize" method="post" >
 		<h2>Identification</h2>

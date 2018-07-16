@@ -28,7 +28,7 @@ ob_start();
 
 		<div id="previousAbstract">
 			
-			<h4><?= (strip_tags($lastPost['title']));?></h4><br />
+			<h4><?= (strip_tags($lastPost['title']));?></h4>
 			<p><?= (strip_tags($lastPost['resume']));?></p>
 			
 		</div>
@@ -39,7 +39,7 @@ ob_start();
 		
 		<div id="nextAbstract">
 		
-			<h4><?= (strip_tags($nextPost['title']));?></h4><br />
+			<h4><?= (strip_tags($nextPost['title']));?></h4>
 			<p><?= (strip_tags($nextPost['resume']));?></p>
 			
 		</div>
