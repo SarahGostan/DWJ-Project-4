@@ -1,6 +1,9 @@
 <?php
 require_once("Database.php");
+
 class CommentManager extends Manager{
+	
+	/* - - - - - - - - - - - - - - - Affichage de données - - - - - - - - - - - - - - - */
 
 	public function getComments($postId){
 		$db = $this->dbConnect();
@@ -8,26 +11,33 @@ class CommentManager extends Manager{
 		$comments->execute(array($postId));
 		return $comments;
 	}
-
+	
+	public function getReportedComments(){
+		$db = $this->dbConnect();
+		$comments = $db->query('SELECT id, content, date, author, number_report, post_id, last_report_date FROM comments WHERE number_report > 0 ORDER BY number_report desc, last_report_date desc');
+		return $comments;
+    }
+	
+	
+	/* - - - - - - - - - - - - - - - Ajout de données - - - - - - - - - - - - - - - */
 
 	public function postComment($postId, $pseudo, $comment){
 		$db = $this->dbConnect();
 		$comments = $db->prepare('INSERT INTO comments(post_id, author, content) VALUES (?, ?, ?)');
 		$affectedLines = $comments->execute(array($postId, $pseudo, $comment));
 		return $affectedLines;
-		
 	}
 
 	public function reportComment($commentId){
 		$db = $this->dbConnect();
-		
-
-			
-			$req = $db->prepare('UPDATE comments SET number_report = number_report+1, last_report_date = NOW() WHERE id = ?');
-			$deletedComment = $req->execute(array($commentId));
-			return $deletedComment;
+		$req = $db->prepare('UPDATE comments SET number_report = number_report+1, last_report_date = NOW() WHERE id = ?');
+		$deletedComment = $req->execute(array($commentId));
+		return $deletedComment;
 
 	}
+	
+	
+	/* - - - - - - - - - - - - - - - Suppression de données - - - - - - - - - - - - - - - */
 	
 	public function deleteAllComments($postId){
 		$db = $this->dbConnect();
@@ -35,11 +45,6 @@ class CommentManager extends Manager{
 		$deletComments->execute(array($postId));
 	}
 	
-	  public function getReportedComments(){
-		$db = $this->dbConnect();
-		$comments = $db->query('SELECT id, content, date, author, number_report, post_id, last_report_date FROM comments WHERE number_report > 0 ORDER BY number_report desc, last_report_date desc');
-		return $comments;
-    }
 	
 	public function deleteComment($id){
 		$db = $this->dbConnect();

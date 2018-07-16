@@ -5,28 +5,27 @@ $info=null;
 ob_start(); 
 ?>
 
-<section id="postsContent">
+<section id="postContent">
+
 	<div id="actualAbstract">
 		<h3><?= (strip_tags($post['title']));?></h3>
 	</div>
+	
 	<div id="post">
-
 			<p><?= strip_tags($post['content'], '<strong>, <span>, <em>, <sup>, <img>, <br />, <a>, <h1>, <h2>, <h3>, <h4>, <h5>, <sub>, <sup>'); ?></p>
-
 	</div>
-	<?php if ($checkAuth->isAuthenticated()){
-
+	
+<?php if ($checkAuth->isAuthenticated()){
 ?>
-	<div id="deletePostLink">
+	<div>
 		<a href="index.php?action=updatePostAdmin&id=<?= $post['id']; ?>">Modifier ce billet</a><br />
-	<a href="index.php?action=deletePostAdmin&id=<?= $data['id']; ?>" onclick="return confirm('La suppression est définitive. Confirmer ?')">Supprimer ce billet</a>
+		<a href="index.php?action=deletePostAdmin&id=<?= $data['id']; ?>" onclick="return confirm('La suppression est définitive. Confirmer ?')">Supprimer ce billet</a>
 	</div>
-	<?php } ?>
+<?php } ?>
 	<div id="footband">
 	
+<?= ($lienPostPrecedent);  ?>
 
-
-	<?= ($lienPostPrecedent);  ?>
 		<div id="previousAbstract">
 			
 			<h4><?= (strip_tags($lastPost['title']));?></h4><br />
@@ -39,12 +38,14 @@ ob_start();
 		</div>
 		
 		<div id="nextAbstract">
-			<h4><?= (strip_tags($nextPost['title']));?></h4><br />
 		
+			<h4><?= (strip_tags($nextPost['title']));?></h4><br />
 			<p><?= (strip_tags($nextPost['resume']));?></p>
 			
 		</div>
-			<?= ($lienPostSuivant);	?>
+		
+<?= ($lienPostSuivant);	?>
+
 	</div>
 </section>
 
@@ -61,29 +62,29 @@ ob_start();
 	
 	<br />
 	
-	<?php
-	while ($comment = $comments->fetch()){
+<?php
+while ($comment = $comments->fetch()){
+?>
 
-		?>
-		<div class="commentaire" id="<?php echo "comm" . $comment['id']?>">
-			<div class="descriptifCommentaire">
-				<p>
-					Auteur :  <span class="auteur"><?= htmlspecialchars($comment['author']);?></span><br />
-					le <?= (htmlspecialchars($comment['date']));?>
-				</p>
-			</div>
-			<div class="contenuCommentaire">
-				<p>
-					<?= nl2br(htmlspecialchars($comment['content']));?>
-				</p>
-			</div>
-			<div class="lienSignal"> 
-			<a href="index.php?action=reportComment&amp;post=<?= $post['id']?>&amp;id=<?= $comment['id'] ?>">Signaler</a></div>
+	<div class="commentaire" id="<?php echo "comm" . $comment['id']?>">
+		<div class="commentDescription">
+			<p>
+				Auteur :  <span class="auteur"><?= htmlspecialchars($comment['author']);?></span><br />
+				le <?= (htmlspecialchars($comment['date']));?>
+			</p>
 		</div>
+		
+		<div class="commentContent">
+			<p><?= nl2br(htmlspecialchars($comment['content']));?></p>
+		</div>
+		
+		<div class="reportLink"> 
+			<a href="index.php?action=reportComment&amp;post=<?= $post['id']?>&amp;id=<?= $comment['id'] ?>">Signaler</a>
+		</div>
+	</div>
+	
+<?php } ?>
 				
-	<?php } ?>
-				
-
 </section>
 
 <?php $content = ob_get_clean(); ?>

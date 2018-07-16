@@ -1,7 +1,5 @@
 <?php
 
-
-
 class Manager
 {
     protected function dbConnect()
@@ -13,7 +11,5 @@ class Manager
 		catch(Exception $e){
 			die('Erreur : ' . $e->getMessage());
 		}
-		
-		// stocker objet PDO dans un attribut
     }
 }

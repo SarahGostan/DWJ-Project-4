@@ -1,28 +1,20 @@
 <?php
 	require_once('model/PostManager.php');
 	require_once('model/CommentManager.php');
+	require_once('class/FlashMessage.php');
 
+/* - - - - - - - - - - - - - - - Affichage des chapitres - - - - - - - - - - - - - - - */
 
-
-
-	
-		function listPosts(){
+	function listPosts(){
 		
 		$postManager = new PostManager();
 		$firstPost = $postManager->premiereEntree();
 		$posts = $postManager->getPosts($firstPost, 5);	
 		$pageActuelle = $postManager->pageActuelle();
 		$page_number = $postManager->pageNumber(5);
-
-	require('view/accueil.php');
-	
+		require('view/accueil.php');
 	}
 	
-	function getNextPost($id){
-		$postManager = new PostManager();
-		$nextPost = $postManager->getNextPost($id);
-		echo $nextPost['id'];
-	}
 	function post(){
 		
 		$postManager = new PostManager();
@@ -35,22 +27,23 @@
 			$nextPost = $postManager->getNextPost($id);
 			$comments =	$commentManager->getComments($id);
 			
-			if ($lastPost != array()){
+			if ($lastPost != array())
+			{
 				$lienPostPrecedent = " <a href=' " . $page_chapitres . "&id=" . $lastPost['id'] . "'><i class='fa fa-arrow-left'></i></a>";
 				
 			}
-			else {
+			else 
+			{
 				
 				$lienPostPrecedent = "";
-			}
-			
-			
-			
-			if ($nextPost != array()){
+			}	
+			if ($nextPost != array())
+			{
 				$lienPostSuivant = " <a href=' " . $page_chapitres . "&id=" . $nextPost['id'] . "'><i class='fa fa-arrow-right'></i></a>";
 			
 			}
-			else{
+			else
+			{
 				
 				$lienPostSuivant = "";
 			}
@@ -58,35 +51,40 @@
 			$comments =	$commentManager->getComments($id);
 			
 			require('view/post.php');
-
-
 	}
+	
+/* - - - - - - - - - - - - - - - Actions de commentaires - - - - - - - - - - - - - - - */
 	
 	function addComment($postId, $pseudo, $comment){
 		$commentManager = new CommentManager();
 		$affectedLines = $commentManager->postComment($postId, $pseudo, $comment);
 		
-		if ($affectedLines === false){
+		if ($affectedLines === false)
+		{
 			   throw new Exception('Impossible d\'ajouter le commentaire !');
 		}
-		else{
+		else
+		{
 			header('Location: index.php?action=viewPost&id=' . $postId);
+			exit();
 		}
 	}
 	
 	function reportComment($postId, $commentId){
 		$commentManager = new CommentManager();
 		$deletedComment = $commentManager->reportComment($commentId);
-		
-		if ($deletedComment === false){
+
+		if ($deletedComment === false)
+		{
 			throw new Exception('Impossible de signaler le commentaire');	
 		}
-		else{
+		else
+		{
 			$flashMessage = new FlashMessage();
 			$flashMessage->addMessage("Commentaire signalé !");
 			header('Location: index.php?action=viewPost&id=' . $postId);
 			echo '<script language="javascript">alert("Commentaire signalé !");</script>';
-		exit();
+			exit();
 		}
 			
 			

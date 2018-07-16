@@ -13,8 +13,7 @@ function reportedComment(){
 	$moderComm = $moderationManager->getReportedComments();	
 	require('view/admin/moderation.php');
 	return $moderComm;
-} 
-
+}
 
 function deleteAllComments($postId){
 	$commentManager = new CommentManager();
@@ -35,7 +34,6 @@ function deleteComment($id){
 		}
 }
 
-
 function deleteReport($id){
 	$moderationManager = new CommentManager();
 	$deleteReport = $moderationManager->deleteReport($id);
@@ -52,8 +50,6 @@ function deleteReport($id){
 
 
 /* - - - - - - - - - - - - - - - Gestion Posts - - - - - - - - - - - - - - - */
-
-
 
 function listPostsAdmin(){
 	$postManager = new PostManager();
@@ -76,7 +72,6 @@ function deletePost($id){
 			$flashMessage->addMessage("Billet supprimé");
 			header('Location: index.php?action=gestionAdmin');	
 		}
-	
 }
 
 function openPost($id){
@@ -87,20 +82,19 @@ function openPost($id){
 
 function updatePost($id, $title, $resume, $content){
 	$postManager = new PostManager();
-	
 	$updatedPost = $postManager->updatePost($id, $title, $resume, $content);
-
-	if ($updatedPost === false){
+	
+	if ($updatedPost === false)
+	{
 		  throw new Exception('Impossible de modifier ce billet');
 	}
-	else{
+	else
+	{
 		$flashMessage = new FlashMessage();
 		$flashMessage->addMessage("Billet mis à jour");
 		header('Location: index.php?action=gestionAdmin');
-		echo "Billet modifié";
 	}
 }
-
 
 function addPost($title, $resume, $content){	
 	$adminManager = new PostManager();		
@@ -117,20 +111,12 @@ function addPost($title, $resume, $content){
 
 /* - - - - - - - - - - - - - - - Gestion Connexion - - - - - - - - - - - - - - - */
 
-function checkAuth(){
+
+function login(){
 	$userSession = new UserSession();
-	$checkAuth = $userSession->isAuthenticated();
-	if ($checkAuth == false){
-		$flashMessage = new FlashMessage();
-		$flashMessage->addMessage("Cette action est réservée aux administrateurs");
-		header('Location: index.php?action=login');
-		exit();
-	}
+	$flashMessage = new FlashMessage();
+	require('view/login.php');
 }
-
-
-
-
 
 function logoff(){
 	$userSession = new UserSession();
@@ -138,11 +124,6 @@ function logoff(){
 	header('Location: index.php?action=login');
 }
 
-function login(){
-	$userSession = new UserSession();
-	$flashMessage = new FlashMessage();
-	require('view/login.php');
-}
 
 function authenticize($pseudo, $password){
 	
@@ -158,5 +139,18 @@ function authenticize($pseudo, $password){
 		exit();
 	}
 	
+}
+
+/* - - - - - - - - - - - - - - - Droit d'accès aux pages admin - - - - - - - - - - - - - - - */
+
+function checkAuth(){
+	$userSession = new UserSession();
+	$checkAuth = $userSession->isAuthenticated();
+	if ($checkAuth == false){
+		$flashMessage = new FlashMessage();
+		$flashMessage->addMessage("Cette action est réservée aux administrateurs");
+		header('Location: index.php?action=login');
+		exit();
+	}
 }
 	
