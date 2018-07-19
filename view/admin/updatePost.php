@@ -19,4 +19,5 @@ $info= "Modifier ce billet :"
 <?php
 $content = ob_get_clean();
 require('view/template.php'); 
+}
 ?>
