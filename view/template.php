@@ -1,4 +1,5 @@
-<?php $checkAuth = new UserSession(); 
+<?php 
+$checkAuth = new UserSession(); 
 $flashMessage = new FlashMessage(); ?>
 
 <!DOCTYPE html>
